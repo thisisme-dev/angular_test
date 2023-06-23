@@ -1,0 +1,166 @@
+.v-choice-box {
+    .row {
+        padding: 0.25rem;
+    }
+    .columns {
+        padding: 1rem;
+    }
+    .v-choice-box-item {
+        display: block;
+        cursor: pointer;
+        overflow: hidden;
+        @include transition(0.2s);
+        border: $border-1;
+        border-color: $gray-1;
+        position: relative;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            @include transform(translateX(-120%) skewX(-10deg));
+            @include transition(transform .3s cubic-bezier(.215,.61,.355,1));
+            mix-blend-mode: multiply;
+            background: $prime;
+        }
+        &:hover {
+            &::after {
+                @include transform(translateX(0) skewX(-10deg) scaleX(1.25));
+            }
+        }
+        &.active {
+            @include transition(border-width 0s linear);
+            &::after {
+                @include transform(translateX(0) skewX(-10deg) scaleX(1.25));
+            }
+        }
+        img {
+            display: block;
+        }
+        .v-choice-box-item-description {
+            font-size: 2rem;
+            font-family: $v-font-header;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 0.5em;
+        }
+    }
+    &.v-agent-choice {
+        .v-choice-box-item {
+            border: none;
+        }
+    }
+    &.v-gun-buddys-choice {
+        .row {
+            justify-content: center;
+        }
+    }
+    &.v-player-card-choice {
+        //
+    }
+    &.v-spray-choice {
+        .row {
+            justify-content: center;
+        }
+    }
+    &.v-weapon-choice {
+        //
+    }
+}
+.v-name-choice {
+    margin-top: 3em;
+    .row {
+        padding: 0.25rem;
+    }
+    .columns {
+        padding: 1rem;
+    }
+    .v-name-choice-label {
+        text-align: right;
+        margin: 0.625em 0;
+    }
+}
+.v-weapon-choice {
+    .v-choice-box-item {
+        position: relative;
+        cursor: unset;
+        &::after {
+            content: unset;
+        }
+        .v-thumbnail-chooser-box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0.5625em;
+            z-index: 1;
+            img {
+                max-width: 3.125em;
+                cursor: pointer;
+                border: $border-1;
+                &.show {
+                    border: $border-2;
+                    border-color: $prime;
+                }
+                &:not(:first-child) {
+                    margin-left: 0.5625em;
+                }
+            }
+        }
+        .v-weapon-img-item-box {
+            //
+        }
+        .v-weapon-img-item-span {
+            display: none;
+            &.show {
+                display: block;
+                position: relative;
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    @include transform(translateX(-120%) skewX(-10deg));
+                    @include transition(transform .3s cubic-bezier(.215,.61,.355,1));
+                    mix-blend-mode: multiply;
+                    background: $prime;
+                }
+                &:hover {
+                    &::after {
+                        @include transform(translateX(0) skewX(-10deg) scaleX(1.25));
+                    }
+                }
+                &.active {
+                    @include transition(border-width 0s linear);
+                    &::after {
+                        @include transform(translateX(0) skewX(-10deg) scaleX(1.25));
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+@include breakpoint (mobile) {
+    .v-choice-box {
+        .v-choice-box-item {
+            .v-choice-box-item-description {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

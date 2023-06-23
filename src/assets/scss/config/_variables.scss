@@ -1,0 +1,84 @@
+// Fonts
+$alternative-font : -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$ui-font : $alternative-font;
+$ui-font-regular : 'ui-font-regular', $alternative-font;
+$ui-font-bold : 'ui-font-bold', $alternative-font;
+$ui-font-icon : 'ui-font-icon', $alternative-font;
+
+// Color setup
+$prime: #FF6B11;
+
+$white : #FFFFFF;
+$gray-1 : #FAFAFA;
+$gray-2 : #F4F4F4;
+$gray-3 : #B4B4B4;
+$gray-4 : #4A4A4A;
+$gray-5 : #212121;
+$black : #050505;
+
+// Container
+$container-mobile : 100%;
+$container-tablet : 90%;
+// $container-width : 85.25rem;
+$container-width : 84.5rem;
+$container-width-small : 42.25rem;
+$container-width-large : 90rem;
+$container-width-blog : 50rem;
+
+// Effects
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+@mixin transform($burger-menu-animation) {
+    -webkit-transform: $burger-menu-animation;
+    -moz-transform: $burger-menu-animation;
+    -ms-transform: $burger-menu-animation;
+    -o-transform: $burger-menu-animation;
+    transform: $burger-menu-animation;
+}
+@mixin animation($animation-value) {
+    -webkit-animation: $animation-value;
+    -moz-animation: $animation-value;
+    -o-animation: $animation-value;
+    animation: $animation-value;
+}
+
+$burger-menu-transform-before : rotate(45deg) translate(0, 0.8em);
+$burger-menu-transform-after : rotate(-45deg) translate(0, -0.8em);
+$transition : all ease-in-out 0.3s;
+
+// UI style
+$cl-border : $gray-2;
+$border-1 : 1px solid $cl-border;
+$border-2 : 2px solid $cl-border;
+$border-3 : 3px solid $cl-border;
+$border-4 : 4px solid $cl-border;
+$box-shadow: 0 3px 10px transparentize($black, 0.9);
+
+// Mixin brekpoint
+@mixin breakpoint($name) {
+  @if $name == "mobile" {
+    @media (min-width: 576px) {
+      @content;
+    }
+  }
+  @if $name == "tablet" {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @else if $name == "desktop" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+  @else if $name == "desktop-large" {
+    @media (min-width: 1468px) {
+      @content;
+    }
+  }
+}

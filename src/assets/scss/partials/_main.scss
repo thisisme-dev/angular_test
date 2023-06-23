@@ -1,0 +1,66 @@
+.ui-layout-container {
+    border-left: $border-1;
+    border-right: $border-1;
+    border-color: $gray-2;
+    padding: 1em;
+}
+.ui-main-container {
+    .ui-layout-container {
+        padding: 2em;
+        &:first-child {
+            padding-top: 8em;
+        }
+        &.ui-highlight-container {
+            background: $black;
+            color: $white;
+            text-align: center;
+            p {
+                color: $white;
+            }
+        }
+    }
+}
+.container {
+    max-width: $container-width;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+.ui-headline-section {
+    &.small {
+        max-width: 30rem;
+    }
+}
+img {
+    width: 100%;
+    height: auto;
+}
+ul, ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+li {
+    margin-bottom: 0.75em;
+    line-height: 1.5em;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.hidden {
+    overflow: hidden;
+}
+.ui-game-container {
+    padding: 2.5em 0;
+}
+#puzzleCanvas {
+    canvas {
+        background: $gray-1!important;
+    }
+}
+#puzzleModal {
+    &.active {
+        display: block;
+    }
+}

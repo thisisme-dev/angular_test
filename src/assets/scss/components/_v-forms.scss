@@ -1,0 +1,28 @@
+input, textarea {
+    font-size: 2rem;
+    font-family: $v-font-regular;
+    width: 100%;
+    outline: none;
+    resize: none;
+    box-shadow: none;
+    @include transition($transition);
+    color: $gray-2;
+    background: $light-peach;
+    border: $border-1;
+    padding: 1.375em 1em;
+    &:focus {
+        border-color: $prime;
+        @include transition(border-width 0s linear);
+    }
+    &[type='submit'] {
+        width: auto;
+        cursor: pointer;
+    }
+}
+:-ms-input-placeholder, ::placeholder, ::-webkit-input-placeholder {
+    color: $gray-2;
+}
+label {
+    display: block;
+    color: $gray-1;
+}

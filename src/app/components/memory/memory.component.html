@@ -1,0 +1,43 @@
+<section class="ui-layout-container">
+  <div class="ui-headline-section small">
+    <h2 id="memory">Memory</h2>
+  </div>
+  <div class="ui-memory-wrapper">
+    <div class="ui-memory-game ui-game-container" #uiMemoryGame>
+      <ng-container
+        *ngFor="let card of cards; trackBy: trackByFunc; let i = index"
+      >
+        <div
+          class="card"
+          (click)="cardClicked(card, i)"
+          [attr.data-id]="card.id"
+        >
+          <div
+            class="inside"
+            [ngClass]="{ matched: card.matched, picked: card.picked }"
+          >
+            <div class="front">
+              <img [src]="card.img" [alt]="card.name" />
+            </div>
+            <div class="back">
+              <img src="assets/logo-sign-msm-digital.png" alt="msm" />
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<div id="memoryModal" class="modal-overlay" #memoryModal>
+  <div class="modal-background"></div>
+  <div class="modal">
+    <p class="h1">🎉</p>
+    <h2>Good Job!</h2>
+    <p>You've complete the memory game with {{ turn }} Turns.</p>
+    <button id="memoryRestart" class="ui-btn">
+      <span class="ui-btn-skew-element"></span>
+      <span (click)="reset()">Play again</span>
+    </button>
+  </div>
+</div>

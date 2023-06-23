@@ -1,0 +1,47 @@
+<nav class="ui-top-navbar">
+  <div id="ui-desktop-menu-container">
+    <div class="container">
+      <div class="ui-layout-container ui-top-navbar-inner-container">
+        <a href="#" class="ui-brand">Tech.</a>
+        <ul>
+          <li><a href="#memory">Memory</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="ui-mobile-menu-container">
+    <div class="container">
+      <div class="ui-layout-container ui-top-navbar-inner-container">
+        <a href="#" class="ui-brand">Tech.</a>
+        <button class="ui-burger-menu-btn" (click)="toggleMobileNav()">
+          <i class="icon-ui-icon-menu"></i>
+        </button>
+        <ul class="ui-mobile-menu" *ngIf="showMobileNav">
+          <li><a href="#memory">Memory</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="ui-header-container">
+  <div class="container">
+    <div class="ui-layout-container">
+      <h1>Basic HTML Games</h1>
+    </div>
+  </div>
+</header>
+
+<main class="ui-main-container">
+  <router-outlet></router-outlet>
+  <app-memory></app-memory>
+</main>
+
+<footer class="ui-footer-bar">
+  <div class="container">
+    <div class="ui-layout-container">
+      <span>2021, Created with ❤️</span>
+    </div>
+  </div>
+</footer>

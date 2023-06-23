@@ -1,0 +1,13 @@
+header {
+    &.ui-header-container {
+        background: $gray-1;
+        border-bottom: $border-1;
+        .ui-layout-container {
+            height: 25rem;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

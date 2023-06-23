@@ -1,0 +1,73 @@
+.v-configurator-section-part {
+    min-height: 84vh;
+    display: none;
+    position: relative;
+    .container {
+        min-height: 84vh;
+        border-left: $border-1;
+        // padding-bottom: 4em;
+    }
+    &.active {
+        display: block;
+    }
+    .v-configurator-section-part-header {
+        position: relative;
+        padding-top: 2.8125rem;
+    }
+    &#intro-section {
+        .v-configurator-section-part-header {
+            padding-top: 8.75rem;
+            .v-media-box {
+                height: 100%;
+                padding-bottom: 4.375em;
+                position: relative;
+                &::before {
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    background: $gray-1;
+                    width: 80%;
+                    position: absolute;
+                    bottom: 24%;
+                    left: 4em;                
+                    z-index: -1;
+                }
+                img {
+                    display: block;
+                    height: 100%;
+                    width: 155%;
+                    object-fit: cover;
+                    object-position: left;
+                    position: relative;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}
+@include breakpoint (desktop) {
+    .v-configurator-section-part {
+        &#intro-section {
+            .v-configurator-section-part-header {
+                padding-top: 4.375em;
+                .v-media-box {
+                    height: auto;
+                    margin: 3.5em 0;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: unset;
+                        object-position: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+@include breakpoint (tablet) {
+    .v-configurator-section-part {
+        .v-configurator-section-part-header {
+            padding-top: 3.8125rem;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+// .ui-btn {
+//     font-size: 1.25rem;
+//     font-family: $ui-font-regular;
+//     font-weight: bold;
+//     text-decoration: none;
+//     padding: 1em 1.579em;
+//     color: $white;
+//     background: $black;
+//     display: inline-block;
+//     border: none;
+//     cursor: pointer;
+//     outline: none;
+//     @include transition($transition);
+//     &.small {
+//         font-size: 0.75rem;
+//     }
+//     &.prime {
+//         background-color: $prime;
+//         border-color: $prime;
+//         color: $gray-3;
+//     }
+// }
+.ui-btn {
+    font-size: 1rem;
+    font-family: $ui-font-bold;
+    text-decoration: none;
+    padding: 1em 1.75em;
+    color: $white;
+    background: $gray-5;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 0.125em;
+    line-height: normal;
+    margin-right: 0.5em;
+    &:hover {
+        .ui-btn-skew-element {
+            @include transform(translateX(0) skew(0deg));
+        }
+    }
+    .ui-btn-skew-element {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 140%;
+        top: 0;
+        z-index: -1;
+        left: -5%;
+        background: $prime;
+        @include transition(transform 0.5s ease-in-out);
+        @include transform(translateX(-115%) skew(-40deg));
+    }
+    &.link {
+        background: transparent;
+        color: $gray-5;
+        .ui-btn-skew-element {
+            background: $gray-2;
+        }
+    }
+}
+button {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+@include breakpoint(desktop) {
+    .ui-btn {
+        font-size: 1.25rem;
+    }
+}

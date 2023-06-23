@@ -1,0 +1,131 @@
+nav {
+    font-size: 1rem;
+    width: 100%;
+    &.ui-top-navbar {
+        background: $white;
+        border-bottom: $border-1;
+        &.fixed {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 3;
+            overflow-x: hidden;
+        }
+        .ui-top-navbar-inner-container {
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: $white;
+        }
+        .ui-brand {
+            color: $black;
+        }
+        a {
+            font-size: 1rem;
+            font-family: $ui-font-bold;
+            letter-spacing: .1em;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.25em 0;
+            text-transform: uppercase;
+            color: $black;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            li {
+                list-style: none;
+                display: block;
+                padding: 1em 0;
+                margin-bottom: 1em;
+            }
+        }
+        .ui-burger-menu-btn {
+            z-index: 2;
+            display: -ms-flexbox;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            justify-content: center;
+        }
+        #ui-mobile-menu-container {
+            width: 100%;
+            .ui-mobile-menu {
+                display: none;
+                margin: 0;
+                padding: 0 1em;
+                width: 100%;
+                position: fixed;
+                top: 56px;
+                right: 0;
+                bottom: 0px;
+                left: 0;
+                background: $white;
+                z-index: 9;
+                a {
+                    font-size: 1rem;
+                    padding: 1.5em 1.125em;
+                    display: block;
+                    text-transform: uppercase;
+                    border-bottom: $border-1;
+                    border-color: $gray-4;
+                }
+                li {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+        #ui-desktop-menu-container {
+            display: none;
+        }
+        .row {
+            align-items: center;
+            .columns {
+                &:last-child {
+                    align-items: center;
+                }
+            }
+        }
+        &.fixed {
+            position: fixed;
+            top: 0;
+            z-index: 9;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    nav {
+        &.ui-top-navbar {
+            .ui-burger-menu-btn {
+                display: none;
+            }
+            #ui-mobile-menu-container {
+                display: none;
+            }
+            #ui-desktop-menu-container {
+                display: -ms-flexbox;
+                display: flex;
+                flex: 1;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            ul {
+                width: auto;
+                li {
+                    margin: 0;
+                    padding: 0.25em 0;
+                    display: inline-block;
+                    &:not(:first-child) {
+                        margin-left: 1em;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@mixin fontFaces($fontDirectory, $fontStyleDirectory, $fontFace, $fontFamily) {
+    @font-face {
+        font-family: $fontFamily;
+        src: url('/assets/fonts/'+$fontDirectory+'/'+$fontStyleDirectory+'/'+$fontFace+'.eot');
+        src: url('/assets/fonts/'+$fontDirectory+'/'+$fontStyleDirectory+'/'+$fontFace+'.eot?#iefix') format('embedded-opentype'),
+             url('/assets/fonts/'+$fontDirectory+'/'+$fontStyleDirectory+'/'+$fontFace+'.woff2') format('woff2'),
+             url('/assets/fonts/'+$fontDirectory+'/'+$fontStyleDirectory+'/'+$fontFace+'.woff') format('woff'),
+             url('/assets/fonts/'+$fontDirectory+'/'+$fontStyleDirectory+'/'+$fontFace+'.ttf') format('truetype'),
+             url('/assets/fonts/'+$fontDirectory+'/'+$fontStyleDirectory+'/'+$fontFace+'.svg') format('svg');
+        font-display: fallback;
+    }
+}
+@include fontFaces('DMSans', 'Regular', 'DMSans-Regular', 'ui-font-regular');
+@include fontFaces('DMSans', 'Bold', 'DMSans-Bold', 'ui-font-bold');
+@include fontFaces('UI_Icon', 'Regular', 'ui-icon', 'ui-font-icon');
